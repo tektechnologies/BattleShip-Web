@@ -6,7 +6,7 @@ export default class Home extends Component {
       <main className="homeBody">
         <img /*insert picture here later */ />
         <h1>How to Play The Game</h1>
-        <div classname="instructions">
+        <div className="instructions">
           <p>
             Step 1: Invite the person you would like to play against
           </p>
