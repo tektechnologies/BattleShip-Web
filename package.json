@@ -28,9 +28,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "eslint": "^5.7.0",
-    "lint": "^1.1.2"
-  }
+  ]
 }
