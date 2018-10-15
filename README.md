@@ -28,7 +28,7 @@ Front end portion of the BattleShip Delta App.
 ### WireFrames
 ![DeltaV 401 project whiteboard](/WhiteBoardPictures/HOMEPAGE_WIREFRAME.PNG)
 
-![DeltaV 401 project whiteboard](/WhiteBoardPictures/aboutpage.png)
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/aboutpage.PNG)
 
 ![DeltaV 401 project whiteboard](/WhiteBoardPictures/alert.PNG)
 
