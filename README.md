@@ -10,6 +10,7 @@ Front end portion of the BattleShip Delta App.
 ## Please change what ever you need to on the Readme I am adding as I go to reorganized before presentation.
 ## Step 1 
 
+
 ## Step 2
 
 
@@ -24,5 +25,17 @@ Front end portion of the BattleShip Delta App.
 
 ## Step 6
 
+### WireFrames
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/HOMEPAGE_WIREFRAME.PNG)
+
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/aboutpage.png)
+
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/alert.PNG)
+
+
 ### Planning
-![DeltaV 401 project whiteboard](/whiteBoard/board_1.jpg)
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/group agreement.JPG)
+
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/project_start.JPG)
+
+
