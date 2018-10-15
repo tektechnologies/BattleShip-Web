@@ -34,7 +34,7 @@ Front end portion of the BattleShip Delta App.
 
 
 ### Planning
-![DeltaV 401 project whiteboard](/WhiteBoardPictures/group agreement.JPG)
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/groupagreement.JPG)
 
 ![DeltaV 401 project whiteboard](/WhiteBoardPictures/project_start.JPG)
 
