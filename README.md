@@ -8,7 +8,9 @@ Front end portion of the BattleShip Delta App.
 
 ### Play the Game
 ## Please change what ever you need to on the Readme I am adding as I go to reorganized before presentation.
-## Step 1 
+
+## Step 1 Start Database
+#sudo mongod --dbpath ~/data/db
 
 
 ## Step 2
@@ -38,4 +40,9 @@ Front end portion of the BattleShip Delta App.
 
 ![DeltaV 401 project whiteboard](/WhiteBoardPictures/project_start.JPG)
 
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/mobileView.JPG)
+
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/desktopView.JPG)
+
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/api_routing.JPG)
 
