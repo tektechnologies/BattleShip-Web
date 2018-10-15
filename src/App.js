@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Auth from './components/auth';
 import './App.css';
 
@@ -21,7 +21,7 @@ class App extends Component {
           </a>
         </header>
         <div>
-          <Router exact path='/auth/:type' component={Auth}/>
+          <Route exact path='/auth/:type' component={Auth}/>
         </div>
       </div>
     );

@@ -5,8 +5,9 @@ export const GAME_UPDATE = 'GAME_UPDATE';
 /* export const GAME_JOIN;
 export const GAME_MOVE;*/
 
-/*export const gameCreate = () =>{
+/*export const gameCreate = (user) =>{
   dispatch =>
     superagent.post(`${API_URL}/api/games`)
-      .set('Authorization', `Bearer ${token}`)
+      .set('Authorization', `Bearer ${user.token}`)
+      .send({'opponent': opponent.username})
 }*/
