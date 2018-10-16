@@ -29,12 +29,12 @@ export default class Nav extends Component {
           <Link to='/'>Insert Dashboard Link Here</Link> { }
           <Link to='/'>Insert New Game Link Here</Link> { }
           <button className='signin' onClick={this.showModal}>Sign In Here</button>
-          <Modal title='auth' show={this.state.showAuth} handleClose={this.hideModal}>
+          <Modal title='Authentification' show={this.state.showAuth} handleClose={this.hideModal}>
             <Auth type="signin" />
             <button className='cancel' onClick={this.hideModal}>Cancel</button>
           </Modal>
           { }
-          <button className='signup'>Sign Up Here</button>
+          <button className='signup' onClick={this.showModal}>Sign Up Here</button>
         </nav>
       </header>
     );
