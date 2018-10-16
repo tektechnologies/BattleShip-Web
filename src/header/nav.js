@@ -6,15 +6,19 @@ import Auth from '../components/auth';
 export default class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = { showAuth: false };
+    this.state = {showAuth: false };
   }
   
   showModal = () => {
-    this.setState({showAuth: true })
+    this.setState({
+      showAuth: true,
+    });
   }
 
   hideModal = () => {
-    this.setState({showAuth: false,})
+    this.setState({
+      showAuth: false,
+    });
   }
 
   render() {
@@ -29,7 +33,7 @@ export default class Nav extends Component {
             <Auth/>
             <button className='cancel' onClick={this.hideModal}>Cancel</button>
           </Modal>
-           { }
+          { }
           <button className='signup'>Sign Up Here</button>
         </nav>
       </header>

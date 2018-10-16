@@ -22,4 +22,4 @@ Modal.propTypes = {
   title: PropTypes.string,
   handleClose: PropTypes.func,
   children: PropTypes.node,
-}
+};
