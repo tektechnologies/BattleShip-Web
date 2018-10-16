@@ -12,8 +12,7 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
     "superagent": "^4.0.0-beta.5",
-    "universal-cookie": "^3.0.4",
-    "webpack-cli": "^3.1.2"
+    "universal-cookie": "^3.0.4"
   },
   "scripts": {
     "lint": "eslint .",
