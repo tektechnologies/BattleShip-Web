@@ -1,6 +1,6 @@
 import superagent from 'superagent';
 
-const API_URL = 'http://localhost:5000';
+// const API_URL = 'http://localhost:5000';
 
 export const GAMELIST_SET = 'GAMELIST_SET';
 
