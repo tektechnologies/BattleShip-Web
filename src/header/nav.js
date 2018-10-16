@@ -30,7 +30,7 @@ export default class Nav extends Component {
           <Link to='/'>Insert New Game Link Here</Link> { }
           <button className='signin' onClick={this.showModal}>Sign In Here</button>
           <Modal title='auth' show={this.state.showAuth} handleClose={this.hideModal}>
-            <Auth/>
+            <Auth type="signin" />
             <button className='cancel' onClick={this.hideModal}>Cancel</button>
           </Modal>
           { }

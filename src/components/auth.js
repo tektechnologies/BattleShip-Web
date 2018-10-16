@@ -1,17 +1,21 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import * as actions from '../actions/auth-actions';
 import AuthForm from './auth-form';
 
 class Auth extends React.Component{
   render(){
-    const type = this.props.match.params.type;
+    const type = this.props.type || (this.props.match && this.props.match.params.type);
+
     if(type === 'signout'){
       this.props.signoutHandler(() => this.props.history.push('/'));
       return null;
     }
     const handleComplete = this.props[type + 'Handler'];
+    if (!handleComplete) {
+      throw new Error(`Unexpected Auth type ${type}`);
+    }
+    
     return(
       <AuthForm onComplete={handleComplete} 
         submitText={type === 'signup' ? 'Sign Up' : 'Sign In'}
@@ -30,4 +34,4 @@ const mapDispatchToProps = (dispatch) => ({
   signoutHandler: redirect => dispatch(actions.signOutReq(redirect)),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Auth));
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);
