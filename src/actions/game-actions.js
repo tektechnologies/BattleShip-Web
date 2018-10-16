@@ -31,7 +31,7 @@ export const gameCreate = (opponent) =>{
       .set('Authorization', getState().auth ? `Bearer ${getState().auth}` : null)
       .send({opponent: opponent.username})
       .then( res =>{
-        dispatch(gameSet(res.body));
+        dispatch(gameUpdate(res.body));
       });
 };
 
