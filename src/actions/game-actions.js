@@ -1,10 +1,7 @@
 import superagent from 'superagent';
-const API_URL = 'http://localhost:5000';
-export const GAME_CREATE = 'GAME_CREATE';
+const API_URL = process.env.API_URL;
 export const GAME_UPDATE = 'GAME_UPDATE';
-export const GAME_MOVE = 'GAME_MOVE';
-export const GAME_SET = 'GAME_SET';
-export const GAME_FETCH = 'GAME_FETCH';
+
 
 export const gameFetch = (gameId) =>{
   (dispatch, getState) =>
@@ -18,11 +15,6 @@ export const gameFetch = (gameId) =>{
 export const gameUpdate = (gameData) =>({
   type: GAME_UPDATE,
   payload: gameData,
-});
-
-export const gameSet = (gameId) =>({
-  type: GAME_SET,
-  payload: gameId,
 });
 
 export const gameCreate = (opponent) =>{
