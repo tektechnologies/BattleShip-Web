@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Auth from './components/auth';
-import './App.css';
+import './styles/reset.css';
 import { Provider } from 'react-redux';
 import storeFactory from './lib/store';
 import Home from './home/home';
