@@ -4,8 +4,8 @@ export default class Home extends Component {
   render() {
     return (
       <main className="homeBody">
-        <img /*insert picture here later */ />
-        <h1>How to Play The Game</h1>
+        {/*<img /> insert picture here */}
+        <h2>How to Play The Game</h2>
         <div className="instructions">
           <p>
             Step 1: Invite the person you would like to play against
