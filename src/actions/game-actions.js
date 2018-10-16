@@ -3,21 +3,21 @@ const API_URL = process.env.API_URL;
 export const GAME_UPDATE = 'GAME_UPDATE';
 
 
-export const gameFetch = (gameId) =>{
+export const gameFetch = (gameId) =>
   (dispatch, getState) =>
     superagent.get(`${API_URL}/api/game/${gameId}`)
       .set('Authorization', getState().auth ? `Bearer ${getState().auth}` : null)
       .then(res =>{
         dispatch(gameUpdate(res.body));
       });
-};
+
 
 export const gameUpdate = (gameData) =>({
   type: GAME_UPDATE,
   payload: gameData,
 });
 
-export const gameCreate = (opponent) =>{
+export const gameCreate = (opponent) =>
   (dispatch, getState) =>
     superagent.post(`${API_URL}/api/games`)
       .set('Authorization', getState().auth ? `Bearer ${getState().auth}` : null)
@@ -25,9 +25,9 @@ export const gameCreate = (opponent) =>{
       .then( res =>{
         dispatch(gameUpdate(res.body));
       });
-};
 
-export const gameMove = (gameId, ...coords) =>{
+
+export const gameMove = (gameId, ...coords) =>
   (dispatch, getState) =>
     superagent.post(`${API_URL}/api/games/${gameId}/move`)
       .set('Authorization', getState().auth ? `Bearer ${getState().auth}` : null)
@@ -35,4 +35,3 @@ export const gameMove = (gameId, ...coords) =>{
       .then(()=>{
         dispatch(gameFetch(gameId));
       });
-};
