@@ -3,16 +3,10 @@ import React from 'react';
 
 
 export default class Dashboard extends React.Component{
-//   constructor(props){
-//     super(props);
-//     this.state = {
-//       game: [{
-//         _id: this.uuid(),
-//         //   add the rest
-//       }],
-//       error: null,
-//     };
-//   }
+  constructor(props){
+    super(props);
+   
+  }
  
 
 
@@ -22,9 +16,9 @@ export default class Dashboard extends React.Component{
     return( 
       <React.Fragment>
         <h2>Welcome to BSD Dashboard!</h2>
-        {/* {error && <div className='error'>{error}</div>} */}
 
         <div>
+
           {/* List of games */}
 
         </div>
