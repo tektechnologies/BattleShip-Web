@@ -4,7 +4,7 @@ export default class Home extends Component {
   render() {
     return (
       <main className="homeBody">
-        <img /*insert picture here later */ />
+        {/*<img /> insert picture here */}
         <h2>How to Play The Game</h2>
         <div className="instructions">
           <p>
