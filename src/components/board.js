@@ -1,7 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
-class Board extends React.Component{
+export default class Board extends React.Component{
   render(){
     let taken = [];
     this.props.shipStatuses.forEach(ship =>{
@@ -72,11 +71,3 @@ class Board extends React.Component{
     );
   }
 }
-
-const mapStateToProps = (state) => ({
-  game: state.game,
-});
-
-//Dispatch to Props?
-
-export default connect(mapStateToProps)(Board);
