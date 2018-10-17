@@ -14,7 +14,7 @@ class GameContainer extends React.Component{
     this.confirmationText = 'Placing ship at';
   }
   componentDidMount(){
-    this.props.fetch(this.props._id);
+    this.props.fetch(this.props.match.params.id);
   }
 
 
