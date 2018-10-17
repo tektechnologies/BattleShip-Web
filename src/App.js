@@ -5,9 +5,9 @@ import './styles/reset.css';
 import './styles/app.css';
 import { Provider } from 'react-redux';
 import storeFactory from './lib/store';
-import Home from './components/home/home';
-import Nav from './components/header/nav';
-import CreateGame from './components/create-game';
+import Home from './home/home';
+import Nav from './header/nav';
+import CreateGame from './components/create-game/create-game';
 const store = storeFactory();
 
 
