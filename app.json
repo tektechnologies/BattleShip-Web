@@ -1,0 +1,15 @@
+{
+  "name": "BattleShip-Web",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
