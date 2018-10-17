@@ -7,12 +7,16 @@ import './nav.css';
 export default class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = {showAuth: false };
+    this.state = {
+      showAuth: false,
+      type: 'signup',
+    };
   }
   
-  showModal = () => {
+  showModal = (e) => {
     this.setState({
       showAuth: true,
+      type: e.target.value,
     });
   }
 
@@ -20,6 +24,10 @@ export default class Nav extends Component {
     this.setState({
       showAuth: false,
     });
+  }
+  
+  componentDidUpdate(){
+    console.log(this.state);
   }
 
   render() {
@@ -29,13 +37,13 @@ export default class Nav extends Component {
           <Link to='/'><h1>Battle Ship Delta</h1></Link>
           <Link to='/dashboard'>Dashboard</Link> { }
           <Link to='/creategame'>Create Game</Link> { }
-          <button className='signin' onClick={this.showModal}>Sign In Here</button>
+          <button className='signin' value='signin' onClick={this.showModal}>Sign In Here</button>
+          { }
+          <button className='signup' value='signup' onClick={this.showModal}>Sign Up Here</button>
           <Modal title='Authentification' show={this.state.showAuth} handleClose={this.hideModal}>
-            <Auth type="signin" />
+            <Auth type={this.state.type} />
             <button className='cancel' onClick={this.hideModal}>Cancel</button>
           </Modal>
-          { }
-          <button className='signup' onClick={this.showModal}>Sign Up Here</button>
         </nav>
       </header>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as listFetch from '../../actions/dashboard-actions';
+import * as actions from '../../actions/dashboard-actions';
 
 
 class Dashboard extends React.Component{
@@ -10,9 +10,9 @@ class Dashboard extends React.Component{
   }
 
   render(){
-    const { gamelist } = this.props;
+    const { gameList } = this.props;
 
-    if(!gamelist){
+    if(!gameList){
       return (<h2>These are not the Droids you are looking for..</h2>
       );
     }
@@ -25,7 +25,7 @@ class Dashboard extends React.Component{
         <div>
           {/* List of games */}
           <ul>
-            {gamelist.map(games => (<li key={games._id}>{games.game}</li>))}
+            {gameList.map(games => (<li key={games._id}>{games.game}</li>))}
           </ul>
         </div>
       </React.Fragment>
@@ -34,11 +34,11 @@ class Dashboard extends React.Component{
 }
 
 const mapStateToProps = (state) => ({
-  gamelist: state.gamelist,
+  gameList: state.gameList,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  gameList: () => dispatch(listFetch.gameList()),
+  listFetch: () => dispatch(actions.listFetch()),
 });
 
 

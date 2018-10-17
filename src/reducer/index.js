@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import auth from './auth';
+import auth from './auth-reducer';
 import game from './game';
-import dashboard from './dashboard-reducer';
+import gameList from './dashboard-reducer';
 
 export default combineReducers({
   auth,
   game,
-  dashboard,
+  gameList,
 });
