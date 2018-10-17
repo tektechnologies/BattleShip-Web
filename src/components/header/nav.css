@@ -1,0 +1,23 @@
+header {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  background-color: rgb(90, 78, 78);
+}
+
+a {
+  color: rgb(209, 209, 209);
+  padding-left: .5%;
+}
+
+a:hover {
+  color: rgb(145, 142, 142)
+}
+
+h1 {
+  font-size: 175%;
+  padding-left: .5%;
+}

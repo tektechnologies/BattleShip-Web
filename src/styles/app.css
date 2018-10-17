@@ -1,0 +1,18 @@
+html {
+  height: 100%;
+  background-color: #4390AF;
+}
+
+.layout {
+  height: 100%;
+}
+
+footer {
+  position: fixed;
+  top: 93%;
+  bottom: 0;
+  width: 100%;
+  color: rgb(209, 209, 209);
+  background-color: rgb(90, 78, 78);
+  text-align: center;
+}
