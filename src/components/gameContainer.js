@@ -49,6 +49,7 @@ class GameContainer extends React.Component{
   }
 
   render(){
+    console.log(this.props);
     const {_id, phase, shipStatuses, yourTurn, userShots, opponentShots} = this.props;
     if(phase[0] !== '0' && phase[0] !== '1' && phase[0] !== '2'){
       this.locked['i2'] = false;
@@ -72,6 +73,7 @@ class GameContainer extends React.Component{
                   <input className='i1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>
               }
+              <p>{this.confirmationText}</p>
               {!this.locked['i1'] && !this.locked['i2'] && yourTurn ?
                 <button type='submit'></button>
                 :

@@ -9,12 +9,14 @@ import Home from './components/home/home';
 import Nav from './components/header/nav';
 import CreateGame from './components/create-game/create-game';
 import DashBoard from './components/dashboard/dashboard';
+import GameContainer from './components/gameContainer';
 const store = storeFactory();
 
 
 
 class App extends Component {
   render() {
+    console.log(store.getState());
     return (
       <Provider store={store}>
         <BrowserRouter>
@@ -32,6 +34,7 @@ class App extends Component {
 
               <div>
                 <Route exact path='/auth/:type' component={Auth}/>
+                <Route exact path='/game/:id' component={GameContainer} />
               </div>
             </main>
             <footer>
