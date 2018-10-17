@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions/auth-actions';
 import AuthForm from './auth-form';
+import { withRouter } from 'react-router-dom';
 
 class Auth extends React.Component{
   render(){
@@ -34,4 +35,4 @@ const mapDispatchToProps = (dispatch) => ({
   signoutHandler: redirect => dispatch(actions.signOutReq(redirect)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Auth);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Auth)); 
