@@ -8,6 +8,7 @@ import storeFactory from './lib/store';
 import Home from './components/home/home';
 import Nav from './components/header/nav';
 import CreateGame from './components/create-game/create-game';
+import DashBoard from './components/dashboard/dashboard';
 const store = storeFactory();
 
 
@@ -25,6 +26,10 @@ class App extends Component {
 
               <Route exact path='/creategame'
                 component={CreateGame} />
+
+              <Route exact path='/dashboard'
+                component={DashBoard} />
+
               <div>
                 <Route exact path='/auth/:type' component={Auth}/>
               </div>
