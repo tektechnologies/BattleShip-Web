@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import storeFactory from './lib/store';
 import Home from './components/home/home';
 import Nav from './components/header/nav';
-import CreateGame from './components/create-game';
+import CreateGame from './components/create-game/create-game';
 const store = storeFactory();
 
 
