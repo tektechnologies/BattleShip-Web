@@ -17,16 +17,16 @@ export default class Board extends React.Component{
     rows.forEach(row =>{
       let rowClass = ' row-'; //base row class for css grid
       rowClass += {row}; //changes row class to row-a through row-e
-      //let coord; //sets default coord class
+      let coord; //sets default coord class
       for(let i = 1; i < 6; i++){
         let colClass = ' col-'; //base column class for css grid
         let className = 'cell '; //base className for all cells
         colClass += {i}; //changes column class to col-1 through col-5
-        //coord = `${row}${i}`; //changes coordinate based on cell instance
+        coord = `${row}${i}`; //changes coordinate based on cell instance
         //key++; //key for divs (May or may not be neccessary)
-        if(userShots.coord){
+        if(userShots[coord]){
           className += 'hit'; //indicates the cell has been hit/missed by user
-        } else if(userShots.coord === false){
+        } else if(userShots[coord] === false){
           className += 'missed';
         }
         className += {rowClass};
@@ -44,9 +44,9 @@ export default class Board extends React.Component{
         colClass += {i}; //changes column class to col-1 through col-5
         coord = `${row}${i}`;
         //key++;
-        if(opponentShots.coord){
+        if(opponentShots[coord]){
           className += 'hit';
-        } else if(opponentShots.coord === false) {
+        } else if(opponentShots[coord] === false) {
           className += 'missed';
         }             
         if(taken.includes(coord)){
