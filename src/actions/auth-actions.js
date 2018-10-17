@@ -1,7 +1,7 @@
 import superagent from 'superagent';
 export const TOKEN_SET = 'TOKEN_SET';
 export const TOKEN_DELETE = 'TOKEN_DELETE';
-const API_URI = process.env.API_URI;
+const API_URI = process.env.API_URL;
 export const tokenSet = token =>({
   type: TOKEN_SET,
   payload: token,
