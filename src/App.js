@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Auth from './components/auth';
 import './styles/reset.css';
 import './styles/app.css';
@@ -31,6 +31,7 @@ class App extends Component {
             </main>
             <footer>
               &copy; DeltaV
+              <Link to='/'>About Us</Link>
             </footer>
           </div>
         </BrowserRouter>
