@@ -2,6 +2,26 @@ import * as actions from '../actions/dashboard-actions';
 import dashboard from './dashboard-reducer';
 
 describe('dashboard reducer', () => {
+  
+  it('returns initial state when no actions', ()=> {
+    let initialState = [];
+    let action = {};
+    expect(dashboard(initialState, action)).toEqual(initialState);
+  });
+
+  it('given null state return payload', ()=> {
+    let initialState;
+    let action = {type: actions.GAMELIST_SET,
+      payload: 'this is a game state'};
+    expect(dashboard(initialState, action)).toEqual('this is a game state');
+  });
+
+  it('post reducer returns null on empty action', ()=> {
+    let initialState;
+    let action = {};
+    expect(dashboard(initialState, action)).toEqual(null);
+  });
+ 
   it('parses a dashboard action', ()=>{
     //check game state
     let action = {type: actions.GAMELIST_SET,
@@ -17,7 +37,7 @@ describe('dashboard reducer', () => {
     expect(dashboard(state, action2)).toBe(state);    
   });
 
-  it('check for empty state', ()=>{
+  it('return state given bad action', ()=>{
     let state = [];
     let action = {type: 'LIST_FETCH', 
       payload: 'this is an empty game state'};
