@@ -10,8 +10,7 @@ class CreateGame extends Component {
     let value = event.target.opponent.value;
     this.props.create(value).then((game) =>{
       this.props.history.push(`/game/${game._id}`);
-    }
-    );
+    });
     
     console.log(this.props.game);
   }
