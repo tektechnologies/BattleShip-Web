@@ -11,8 +11,14 @@ class Dashboard extends React.Component{
   }
 
   componentDidMount(){
-    console.log('componentDidMount');
     this.props.listFetch();
+    this.fetchInterval = setInterval(()=>{
+      this.props.listFetch();}
+    ,30000);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.fetchInterval);
   }
 
   render(){
