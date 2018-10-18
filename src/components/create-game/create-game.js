@@ -13,10 +13,11 @@ class CreateGame extends Component {
   
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className ="create-game-form" onSubmit={this.handleSubmit}>
         <p>Enter the name of your opponent and hit Create Game to start a new game!
         </p>
-        <input 
+        <input
+          className="create-game-input" 
           type="text"
           name="opponent"
           placeholder="opponent username"
