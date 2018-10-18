@@ -1,0 +1,21 @@
+html {
+  height: 100%;
+}
+
+.about { 
+  width: 90%;
+  padding: 2%;
+}
+
+.about h2 {
+  font-size: 150%;
+}
+
+.about h3 {
+  font-size: 125%;
+}
+
+.about p {
+  font-size: 115%;
+  padding: 1%;
+}

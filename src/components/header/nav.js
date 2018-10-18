@@ -44,7 +44,7 @@ class Nav extends Component {
                 <Link to='/creategame'>Create Game</Link>
               </div>
               <div  className='signout'>
-                <button onClick={this.signoutClick}>sign out</button>
+                <button className='effect' onClick={this.signoutClick}>sign out</button>
               </div>
             </nav>
           </div>
@@ -58,7 +58,6 @@ class Nav extends Component {
               </div>
               <Modal title='Authentification' show={this.state.showAuth} handleClose={this.hideModal}>
                 <Auth type={this.state.type} />
-                <button className='cancel' onClick={this.hideModal}>Cancel</button>
               </Modal>
             </nav>
           </div>

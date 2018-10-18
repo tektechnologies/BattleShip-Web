@@ -4,4 +4,17 @@
 
 h2 {
   font-size: 150%;
+  text-align: center
+}
+
+.instructions {
+  padding: 3%;
+  left:50%;
+  /* background-color: rgb(209, 209, 209);  */
+}
+
+.instructions p {
+  font-size: 125%;
+  padding: 1%;
+  background-color: rgb(209, 209, 209);
 }
