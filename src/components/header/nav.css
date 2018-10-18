@@ -52,3 +52,18 @@ h1 {
   float: right;
   line-height: 4px;
 }
+
+.signin:hover {
+  background-color: rgb(145, 142, 142);
+  transition: 250ms;
+}
+
+.signup:hover {
+  background-color: rgb(145, 142, 142);
+  transition: 250ms;
+}
+
+.effect:hover {
+  background-color: rgb(145, 142, 142);
+  transition: 250ms;
+}
