@@ -50,7 +50,10 @@ class GameContainer extends React.Component{
 
   render(){
     console.log(this.props.game);
-    const {_id, phase, shipStatuses, yourTurn, userShots, opponentShots} = this.props.game;
+    const {_id, phase, shipStatuses, yourTurn, userShots, opponentShots} = this.props;
+    if(!phase){
+      return <h1>Loading...</h1>;
+    }
     if(phase[0] !== '0' || phase[0] !== '1' || phase[0] !== '2'){
       this.setState = ({
         locked: {
@@ -97,7 +100,7 @@ class GameContainer extends React.Component{
   }
 }
 
-const mapStateToProps = state => state.game;
+const mapStateToProps = state => {return state.game || {};};
 
 const mapDispatchToProps = (dispatch) => ({
   fetch: _id => dispatch(actions.gameFetch(_id)),
