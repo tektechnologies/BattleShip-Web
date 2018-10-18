@@ -1,12 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions/dashboard-actions';
 
 
 class Dashboard extends React.Component{
+  redirect = (e) => {
+    let id = e.target.value;
+    this.props.history.push(`/game/${id}`);
+  }
+
   componentDidMount(){
-    console.log('componentDidMount');
     this.props.listFetch();
+    this.fetchInterval = setInterval(()=>{
+      this.props.listFetch();}
+    ,30000);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.fetchInterval);
   }
 
   render(){
@@ -19,13 +31,11 @@ class Dashboard extends React.Component{
 
     return( 
       <React.Fragment>
-
         <h2>Welcome to BSD Dashboard!</h2>
         <img src="../../WhiteBoardPictures/Capture.PNG" alt="logo-bsd" height="300" width="300"></img>
         <div>
-          {/* List of games */}
           <ul>
-            {gameList.map(games => (<li key={games._id}>{games.game}</li>))}
+            {gameList.map(games => (<li key={games.id}>Game with: {games.players[0]}  Current game phase: {games.phase} <button value={games.id} onClick={this.redirect}>Join Game</button></li>))}
           </ul>
         </div>
       </React.Fragment>
@@ -43,4 +53,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Dashboard));
