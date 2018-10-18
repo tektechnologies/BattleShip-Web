@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Modal from './modal';
 import Auth from '../auth';
 import './nav.css';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/auth-actions';
-import { withRouter } from 'react-router-dom';
 
 class Nav extends Component {
   constructor(props) {
