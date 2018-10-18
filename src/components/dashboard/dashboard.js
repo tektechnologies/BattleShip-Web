@@ -19,11 +19,9 @@ class Dashboard extends React.Component{
 
     return( 
       <React.Fragment>
-
         <h2>Welcome to BSD Dashboard!</h2>
         <img src="../../WhiteBoardPictures/Capture.PNG" alt="logo-bsd" height="300" width="300"></img>
         <div>
-          {/* List of games */}
           <ul>
             {gameList.map(games => (<li key={games._id}>{games.game}</li>))}
           </ul>
