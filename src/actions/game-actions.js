@@ -29,6 +29,7 @@ export const gameCreate = (opponent) => (dispatch, getState) =>{
     .send({'opponent': opponent})
     .then(res =>{
       dispatch(gameUpdate(res.body));
+      return res.body;
     });
 };
 

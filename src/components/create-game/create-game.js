@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import * as actions from '../../actions/game-actions';
 import {connect} from 'react-redux';
 import './create-game.css';
+import { withRouter } from 'react-router-dom';
 
 class CreateGame extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     let value = event.target.opponent.value;
-    this.props.create(value);
-    console.log(value);
+    this.props.create(value).then((game) =>{
+      this.props.history.push(`/game/${game._id}`);
+    });
+    
+    console.log(this.props.game);
   }
   
   render() {
@@ -32,11 +36,10 @@ class CreateGame extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  game: state.game,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   create: opponent => dispatch(actions.gameCreate(opponent)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateGame);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CreateGame));
