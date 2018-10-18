@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../../actions/auth-actions';
 import Modal from './modal';
 import Auth from '../auth';
 import './nav.css';
-import { connect } from 'react-redux';
-import * as actions from '../../actions/auth-actions';
 
 class Nav extends Component {
   constructor(props) {
@@ -37,10 +37,11 @@ class Nav extends Component {
       <header className="nav">
         {this.props.auth ? 
           <div>
-            <nav>
+            <nav className='loggedin'>
               <Link to='/'><h1>BattleShip Delta</h1></Link>
               <Link to='/dashboard'>Dashboard</Link>
               <Link to='/creategame'>Create Game</Link>
+              <p>Welcome</p>
               <button onClick={this.signoutClick}>sign out</button>
             </nav>
           </div>

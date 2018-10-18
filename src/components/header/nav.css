@@ -8,6 +8,14 @@ header {
   background-color: rgb(90, 78, 78);
 }
 
+.loggedin {
+  color: rgb(209, 209, 209);
+}
+
+.nav p {
+  float: right;
+}
+
 a {
   color: rgb(209, 209, 209);
   padding-left: .5%;
@@ -20,4 +28,8 @@ a:hover {
 h1 {
   font-size: 175%;
   padding-left: .5%;
+}
+
+.nav button {
+  float: right;
 }
