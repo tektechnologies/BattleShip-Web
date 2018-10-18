@@ -6,12 +6,15 @@ import Board from './board';
 class GameContainer extends React.Component{
   constructor(){
     super();
-    this.locked = {
-      'i1': true,
-      'i2': true,
+    this.state = {
+      locked: {
+        'input1': true,
+        'input2': true,
+      },
+      value1: '',
+      value2: '',
+      confirmationText: 'Placing ship at ',
     };
-    this.vals = [];
-    this.confirmationText = 'Placing ship at';
   }
   componentDidMount(){
     this.props.fetch(this.props.match.params.id);
@@ -21,39 +24,42 @@ class GameContainer extends React.Component{
   changeHandler = e =>{
     let val = e.target.value;
     let className = e.target.className;
-    if(val.length !== 2){
-      this.locked = true;
-    }
-    else if(val.charCodeAt(0) > 101 || val.charCodeAt(0) < 97){
-      this.locked = true;
-    }
-    else if(val[1] > 5 || val[1] < 1){
-      this.locked = true;
+    if(val.length !== 2 || (val.charCodeAt(0) > 101 || val.charCodeAt(0) < 97) || (val[1] > 5 || val[1] < 1)){
+      this.setState = ({
+        locked: {
+          className: true,
+        },
+      });
     } else{
       this.locked[className] = false;
-      if(className === 'i1'){
-        this.vals[0] = val;
-        this.confirmationText = this.confirmationText.split(' ');
-        let insert = this.confirmationText.indexOf('at');
-        this.confirmationText[insert] = `at ${val}`;
-        this.confirmationText = this.confirmationText.join(' ');
+      if(className === 'input1'){
+        this.setState = ({
+          value1: val,
+        });
       } else{
-        this.vals[1] = val;
-        this.cofirmationText += `and ${val}`;
+        this.setState = ({
+          value2: val,
+        });
       }
     }
   }
   submitHandler = e =>{
     e.preventDefault();
-    this.props.move(this.props._id, this.vals);
+    this.props.move(this.props.game._id, this.state.value1, this.state.value2);
   }
 
   render(){
-    console.log(this.props);
-    const {_id, phase, shipStatuses, yourTurn, userShots, opponentShots} = this.props;
-    if(phase[0] !== '0' && phase[0] !== '1' && phase[0] !== '2'){
-      this.locked['i2'] = false;
-      this.confirmationText = 'Firing at';
+    console.log(this.props.game);
+    const {_id, phase, shipStatuses, yourTurn, userShots, opponentShots} = this.props.game;
+    if(phase[0] !== '0' || phase[0] !== '1' || phase[0] !== '2'){
+      this.setState = ({
+        locked: {
+          input2: false,
+        },
+      });
+      this.setState = ({
+        confirmationText: 'Firing at ',
+      });
     }
     return (
       <React.Fragment>
@@ -64,17 +70,21 @@ class GameContainer extends React.Component{
             <form onSubmit={this.submitHandler}>
               {phase[0] === '0' && phase[0] === '1' && phase[0] === '2' ?
                 <div>
-                  <input className='i1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/> 
-                  <input className='i2' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
+                  <input className='input1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/> 
+                  <input className='input2' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>
               
                 :
                 <div>
-                  <input className='i1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
+                  <input className='input1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>
               }
-              <p>{this.confirmationText}</p>
-              {!this.locked['i1'] && !this.locked['i2'] && yourTurn ?
+              <p>{this.state.confirmationText === 'Placing ship at ' ?
+                `${this.state.confirmationText}${this.state.value1} to ${this.state.value2}.`//e.g. 'Placing ship at a1 to d1.'
+                :
+                `${this.state.confirmationText}${this.state.value1}.`//e.g. 'Firing at a1.'  
+              }</p>
+              {!this.state.locked['input1'] && !this.state.locked['input2'] && yourTurn ?
                 <button type='submit'></button>
                 :
                 <button type='submit' disabled></button>
@@ -87,9 +97,7 @@ class GameContainer extends React.Component{
   }
 }
 
-const mapStateToProps = (state) => ({
-  game: state.game,
-});
+const mapStateToProps = state => state.game;
 
 const mapDispatchToProps = (dispatch) => ({
   fetch: _id => dispatch(actions.gameFetch(_id)),
