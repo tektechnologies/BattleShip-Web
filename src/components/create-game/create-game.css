@@ -1,0 +1,27 @@
+form {
+  padding: 30px;
+  background-color: #FFFFFF;
+  border: solid rgb(90, 78, 78);
+  border-radius: 15px;
+  position: relative;
+  top: 50px;
+  text-align: center;
+  font-size: 1em;
+ }
+
+ input {
+   padding: 5px 10px;
+   box-sizing: border-box;
+   position: relative;
+   display: inline-block;
+   margin-top: 15px;
+ }
+
+  .create-game-button{
+    padding: 5px 10px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+  }
+ 

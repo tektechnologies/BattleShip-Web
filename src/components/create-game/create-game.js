@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as actions from '../../actions/game-actions';
 import {connect} from 'react-redux';
-// import './create-game.css';
+import './create-game.css';
 
 class CreateGame extends Component {
   handleSubmit = (event) => {
