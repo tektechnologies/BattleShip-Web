@@ -4,6 +4,8 @@ import Modal from './modal';
 import Auth from '../auth';
 import './nav.css';
 import { connect } from 'react-redux';
+import * as actions from '../../actions/auth-actions';
+import { withRouter } from 'react-router-dom';
 
 class Nav extends Component {
   constructor(props) {
@@ -26,6 +28,11 @@ class Nav extends Component {
     });
   };
 
+  signoutClick = () => {
+    this.hideModal();
+    this.props.signoutHandler(() => this.props.history.push('/'));
+  }
+
   render() {
     return (
       <header className="nav">
@@ -35,7 +42,7 @@ class Nav extends Component {
               <Link to='/'><h1>BattleShip Delta</h1></Link>
               <Link to='/dashboard'>Dashboard</Link>
               <Link to='/creategame'>Create Game</Link>
-              <button>sign out</button>
+              <button onClick={this.signoutClick}>sign out</button>
             </nav>
           </div>
           :
@@ -60,6 +67,11 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect (
-  mapStateToProps
-)(Nav);
+const mapDispatchToProps = (dispatch) => ({
+  signoutHandler: redirect => dispatch(actions.signOutReq(redirect)),
+});
+
+export default withRouter(connect (
+  mapStateToProps,
+  mapDispatchToProps
+)(Nav));
