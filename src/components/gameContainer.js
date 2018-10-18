@@ -13,7 +13,6 @@ class GameContainer extends React.Component{
       },
       value1: '',
       value2: '',
-      confirmationText: 'Placing ship at ',
     };
   }
   componentDidMount(){
@@ -68,7 +67,7 @@ class GameContainer extends React.Component{
           <Board shipStatuses={shipStatuses} userShots={userShots} opponentShots={opponentShots} />
           <aside>
             <form onSubmit={this.submitHandler}>
-              {phase[0] === '0' || phase[0] === '1' || phase[0] === '2' ?
+              {phase[0] <= '2' ?
                 <div>
                   <input name='value1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/> 
                   <input name='value2' type='text'  onChange={this.changeHandler} required minLength='2' maxLength='2'/>
@@ -79,10 +78,10 @@ class GameContainer extends React.Component{
                   <input name='value1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>
               }
-              <p>{this.state.confirmationText === 'Placing ship at ' ?
-                `${this.state.confirmationText}${this.state.value1} to ${this.state.value2}.`//e.g. 'Placing ship at a1 to d1.'
+              <p>{phase[0] <= '2' ?
+                `Placing ship from ${this.state.value1} to ${this.state.value2}.`
                 :
-                `${this.state.confirmationText}${this.state.value1}.`//e.g. 'Firing at a1.'  
+                `Firing at ${this.state.value1}.` 
               }</p>
               {(!this.state.locked['value1'] && !this.state.locked['value2'] && yourTurn) ?
                 <button type='submit'>Confirm</button>
