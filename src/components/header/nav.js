@@ -38,19 +38,25 @@ class Nav extends Component {
         {this.props.auth ? 
           <div>
             <nav className='loggedin'>
-              <Link to='/'><h1>BattleShip Delta</h1></Link>
-              <Link to='/dashboard'>Dashboard</Link>
-              <Link to='/creategame'>Create Game</Link>
+              <Link to='/'><h1 className='auth'>BattleShip Delta</h1></Link>
+              <div className='link'>
+                <Link to='/dashboard'>Dashboard</Link> { }
+                <Link to='/creategame'>Create Game</Link>
+              </div>
               <p>Welcome</p>
-              <button className='signout' onClick={this.signoutClick}>sign out</button>
+              <div  className='signout'>
+                <button onClick={this.signoutClick}>sign out</button>
+              </div>
             </nav>
           </div>
           :
           <div>
             <nav>
               <Link to='/'><h1>BattleShip Delta</h1></Link>
-              <button className='signin' value='signin' onClick={this.showModal}>Sign In Here</button>
-              <button className='signup' value='signup' onClick={this.showModal}>Sign Up Here</button>
+              <div className='authentication'>
+                <button className='signin' value='signin' onClick={this.showModal}>Sign In Here</button>
+                <button className='signup' value='signup' onClick={this.showModal}>Sign Up Here</button>
+              </div>
               <Modal title='Authentification' show={this.state.showAuth} handleClose={this.hideModal}>
                 <Auth type={this.state.type} />
                 <button className='cancel' onClick={this.hideModal}>Cancel</button>

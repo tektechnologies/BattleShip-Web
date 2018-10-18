@@ -1,7 +1,5 @@
 header {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 50px;
 }
 
 .nav {
@@ -12,11 +10,17 @@ header {
   color: rgb(209, 209, 209);
 }
 
+.link {
+  display: inline-block;
+  width: 15%;
+  float: left;
+  clear: left;
+}
+
 .nav p {
   position: fixed;
   right: 10%;
-  margin: 1%;
-  top: 6%;
+  line-height: 3em;
 }
 
 a {
@@ -28,34 +32,23 @@ a:hover {
   color: rgb(145, 142, 142)
 }
 
-h1 {
+.auth {
+  float: left;
+  display: inline-block;
   font-size: 175%;
-  padding-left: .5%;
 }
 
-.signin {
-  position: fixed;
-  right: 0vw;
-  margin: 1%;
-  top: 3.5%;
+h1 {
+  display: inline-block;
+  font-size: 175%;
+}
+
+.authentication {
+  float: right;
+  line-height: 4.9em;
 }
 
 .signout {
-  position: fixed;
-  right: 0%;
-  margin: 1%;
-  top: 3.5%;
-}
-
-.signup {
-  position: fixed;
-  right: 11vw;
-  margin: 1%;
-  top: 3.5%;
-}
-
-@media (min-width: 768px) {
-  .signup {
-    right: 6vw;
-  }
+  float: right;
+  line-height: 4px;
 }
