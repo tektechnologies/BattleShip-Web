@@ -11,6 +11,7 @@ import Nav from './components/header/nav';
 import CreateGame from './components/create-game/create-game';
 import DashBoard from './components/dashboard/dashboard';
 import GameContainer from './components/gameContainer';
+import About from './components/about/about';
 const store = storeFactory();
 store.dispatch(authActions.tokenFromCookie());
 
@@ -33,6 +34,9 @@ class App extends Component {
               <Route exact path='/dashboard'
                 component={DashBoard} />
 
+              <Route exact path='/about'
+                component={About} />
+
               <div>
                 <Route exact path='/auth/:type' component={Auth}/>
                 <Route exact path='/game/:id' component={GameContainer} />
@@ -40,7 +44,7 @@ class App extends Component {
             </main>
             <footer>
               &copy; DeltaV
-              <Link to='/'>About Us</Link>
+              <Link to='/about'>About Us</Link>
             </footer>
           </div>
         </BrowserRouter>
