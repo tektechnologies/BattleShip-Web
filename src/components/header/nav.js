@@ -43,7 +43,6 @@ class Nav extends Component {
                 <Link to='/dashboard'>Dashboard</Link> { }
                 <Link to='/creategame'>Create Game</Link>
               </div>
-              <p>Welcome</p>
               <div  className='signout'>
                 <button onClick={this.signoutClick}>sign out</button>
               </div>
