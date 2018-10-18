@@ -4,8 +4,7 @@ html {
 
 .about { 
   width: 90%;
-  padding-left: 2%;
-  padding-bottom: 4%;
+  padding: 2%;
 }
 
 .about h2 {
