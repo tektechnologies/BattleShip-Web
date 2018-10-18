@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions/dashboard-actions';
-
+import mainLogo from '../../styles/images/BattleShipDelta2.png';
 
 class Dashboard extends React.Component{
   redirect = (e) => {
@@ -32,7 +32,7 @@ class Dashboard extends React.Component{
     return( 
       <React.Fragment>
         <h2>Welcome to BSD Dashboard!</h2>
-        <img src="../../WhiteBoardPictures/Capture.PNG" alt="logo-bsd" height="300" width="300"></img>
+        <img src={mainLogo} alt="logo-bsd" height="" width=""></img>
         <div>
           <ul>
             {gameList.map(games => (<li key={games.id}>Game with: {games.players[0]}  Current game phase: {games.phase} <button value={games.id} onClick={this.redirect}>Join Game</button></li>))}
