@@ -22,3 +22,7 @@
   transform: translate(-50%, -50%);
   background-color: rgba(192, 192, 192, .8);
 }
+
+.exit {
+  float: right;
+}

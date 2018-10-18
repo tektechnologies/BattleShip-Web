@@ -58,7 +58,6 @@ class Nav extends Component {
               </div>
               <Modal title='Authentification' show={this.state.showAuth} handleClose={this.hideModal}>
                 <Auth type={this.state.type} />
-                <button className='cancel' onClick={this.hideModal}>Cancel</button>
               </Modal>
             </nav>
           </div>
