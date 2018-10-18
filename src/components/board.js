@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/board.css';
 let rows = ['a', 'b', 'c', 'd', 'e'];
 
 export default class Board extends React.Component{
