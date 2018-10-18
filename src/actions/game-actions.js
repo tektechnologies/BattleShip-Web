@@ -21,7 +21,7 @@ export const gameCreate = (opponent) =>
   (dispatch, getState) =>
     superagent.post(`${API_URL}/api/games`)
       .set('Authorization', getState().auth ? `Bearer ${getState().auth}` : null)
-      .send({opponent: opponent.username})
+      .send({opponent: opponent})
       .then( res =>{
         dispatch(gameUpdate(res.body));
       });
