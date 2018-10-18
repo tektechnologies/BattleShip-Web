@@ -49,7 +49,7 @@ class GameContainer extends React.Component{
   }
 
   render(){
-    console.log(this.props.game);
+    console.log(this.props);
     const {_id, phase, shipStatuses, yourTurn, userShots, opponentShots} = this.props;
     if(!phase){
       return <h1>Loading...</h1>;

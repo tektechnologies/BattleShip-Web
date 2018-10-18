@@ -8,7 +8,7 @@ export const gameFetch = (gameId) =>
     if(!getState().auth){
       throw new Error('No Authenication Found.');
     }
-    superagent.get(`${API_URL}/api/game/${gameId}`)
+    superagent.get(`${API_URL}/api/games/${gameId}`)
       .set('Authorization', `Bearer ${getState().auth}`)
       .then(res =>{
         dispatch(gameUpdate(res.body));
