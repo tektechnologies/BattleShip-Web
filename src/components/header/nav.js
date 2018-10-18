@@ -32,7 +32,7 @@ class Nav extends Component {
         {this.props.auth ? 
           <div>
             <nav>
-              <Link to='/'><h1>Battle Ship Delta</h1></Link>
+              <Link to='/'><h1>BattleShip Delta</h1></Link>
               <Link to='/dashboard'>Dashboard</Link>
               <Link to='/creategame'>Create Game</Link>
               <button>sign out</button>
@@ -41,7 +41,7 @@ class Nav extends Component {
           :
           <div>
             <nav>
-              <Link to='/'><h1>Battle Ship Delta</h1></Link>
+              <Link to='/'><h1>BattleShip Delta</h1></Link>
               <button className='signin' value='signin' onClick={this.showModal}>Sign In Here</button>
               <button className='signup' value='signup' onClick={this.showModal}>Sign Up Here</button>
               <Modal title='Authentification' show={this.state.showAuth} handleClose={this.hideModal}>
