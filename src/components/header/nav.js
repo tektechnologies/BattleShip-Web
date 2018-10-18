@@ -7,11 +7,11 @@ import { connect } from 'react-redux';
 
 class Nav extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       showAuth: false,
       type: 'signup',
-    }
+    };
   }
   showModal = (e) => {
     this.setState({
@@ -58,7 +58,7 @@ class Nav extends Component {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-})
+});
 
 export default connect (
   mapStateToProps
