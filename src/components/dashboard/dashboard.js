@@ -1,9 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions/dashboard-actions';
 
 
 class Dashboard extends React.Component{
+  redirect = (e) => {
+    let id = e.target.value;
+    this.props.history.push(`/game/${id}`);
+  }
+
   componentDidMount(){
     console.log('componentDidMount');
     this.props.listFetch();
@@ -41,4 +47,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Dashboard));
