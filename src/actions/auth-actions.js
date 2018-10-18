@@ -1,10 +1,15 @@
 import superagent from 'superagent';
 export const TOKEN_SET = 'TOKEN_SET';
 export const TOKEN_DELETE = 'TOKEN_DELETE';
+export const TOKEN_FROM_COOKIE = 'TOKEN_FROM_COOKIE';
 const API_URI = process.env.REACT_APP_API_URL;
 export const tokenSet = token =>({
   type: TOKEN_SET,
   payload: token,
+});
+
+export const tokenFromCookie = token =>({
+  type: TOKEN_FROM_COOKIE,
 });
 
 export const tokenDelete = () =>({
