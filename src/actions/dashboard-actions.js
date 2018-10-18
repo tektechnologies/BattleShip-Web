@@ -9,8 +9,9 @@ export const gameListSet = (gameList) => ({
   payload: gameList,
 });
 
-export const listFetch = () => dispatch => {
+export const listFetch = () => (dispatch, getState) => {
   superagent.get(`${API_URL}/api/games`)
+    .set('Authorization', getState().auth ? `Bearer ${getState().auth}` : null)
     .then(res => {
       dispatch(gameListSet(res.body));
       return res;
