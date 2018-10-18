@@ -7,10 +7,7 @@ class GameContainer extends React.Component{
   constructor(){
     super();
     this.state = {
-      locked: {
-        'value1': true,
-        'value2': true,
-      },
+      locked: true,
       value1: '',
       value2: '',
     };
@@ -22,26 +19,39 @@ class GameContainer extends React.Component{
   componentDidUpdate(){
     console.log(this.state);
   }
+  validateCoord(val){
+    return !(val.length !== 2 || (val.charCodeAt(0) > 101 || val.charCodeAt(0) < 97) || (val[1] > 5 || val[1] < 1));
+  }
+
+  validateState(state){
+    let valid = this.validateCoord(state.value1);
+    if(this.props.phase[0] <= '2'){
+      valid = valid && this.validateCoord(state.value2);
+      //check diagonals
+    } 
+    return valid;
+  }
 
   changeHandler = e =>{
     console.log('Hi keith');
     let val = e.target.value;
     let inputName = e.target.name;
     console.log({val, inputName});
-    var lockThis = val.length !== 2 || (val.charCodeAt(0) > 101 || val.charCodeAt(0) < 97) || (val[1] > 5 || val[1] < 1);
+    //var lockThis = val.length !== 2 || (val.charCodeAt(0) > 101 || val.charCodeAt(0) < 97) || (val[1] > 5 || val[1] < 1);
    
-    this.setState( state =>({
-      locked: {
-        ...state.locked,
-        [inputName]: lockThis,
-      },
+    this.setState({
       [inputName]: val,
+      
+    });
+
+    this.setState( state =>({
+      locked: !this.validateState(state),
     }));
     
   }
   submitHandler = e =>{
     e.preventDefault();
-    this.props.move(this.props.game._id, this.state.value1, this.state.value2);
+    this.props.move(this.props._id, this.state.value1, this.state.value2);
   }
 
   render(){
@@ -50,16 +60,6 @@ class GameContainer extends React.Component{
     if(!phase){
       return <h1>Loading...</h1>;
     }
-    /*if(phase[0] !== '0' || phase[0] !== '1' || phase[0] !== '2'){
-      this.setState = ({
-        locked: {
-          input2: false,
-        },
-      });
-      this.setState = ({
-        confirmationText: 'Firing at ',
-      });
-    }*/
     return (
       <React.Fragment>
         <div id={_id}>{/*for testing purposes*/}
@@ -83,7 +83,7 @@ class GameContainer extends React.Component{
                 :
                 `Firing at ${this.state.value1}.` 
               }</p>
-              {(!this.state.locked['value1'] && !this.state.locked['value2'] && yourTurn) ?
+              {(!this.state.locked && yourTurn) ?
                 <button type='submit'>Confirm</button>
                 :
                 <button type='submit' disabled>Confirm</button>
@@ -100,7 +100,7 @@ const mapStateToProps = state => {return state.game || {};};
 
 const mapDispatchToProps = (dispatch) => ({
   fetch: _id => dispatch(actions.gameFetch(_id)),
-  move: user => dispatch(actions.gameMove(user)),
+  move: (id, val1, val2) => dispatch(actions.gameMove(id, val1, val2)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameContainer);
