@@ -20,11 +20,11 @@ export default class About extends Component {
         </div>
         <div className='nathan'>
           <h3>Nathan</h3>
-          <p>I'm an ex-music educator with a bachelor's degree from Drake University. After choosing to leave the field of education, I decided to follow an interest in technology I've had since a young age. My interest in the field was inspired by the numerous innovations that constantly emerge from the field of technology and I decided I'd like to be a part of that. Through my past experiences in education and music, I am proficient in higher-level thinking and professional communication and I have developed a strong work ethic and sense of self-motivation. In my current field, I am well rounded in HTML, CSS, and Javascript and I am adept at thinking through a given problem and figuring out the most effective way to solve it. My goal is simply to find a role in an industry where I can make use of my love of learning.</p>
+          <p>I&apos;m an ex-music educator with a bachelor&apos;s degree from Drake University. After choosing to leave the field of education, I decided to follow an interest in technology I&apos;ve had since a young age. My interest in the field was inspired by the numerous innovations that constantly emerge from the field of technology and I decided I&apos;d like to be a part of that. Through my past experiences in education and music, I am proficient in higher-level thinking and professional communication and I have developed a strong work ethic and sense of self-motivation. In my current field, I am well rounded in HTML, CSS, and Javascript and I am adept at thinking through a given problem and figuring out the most effective way to solve it. My goal is simply to find a role in an industry where I can make use of my love of learning.</p>
         </div>
         <div className='john'>
           <h3>John</h3>
-          <p>I am new to the coding world. I haven't had any experience building websites until I came to DeltaV. Within the past five months, I have gone from being a novice to being somewhat experienced with building and creating websites. Through DeltaV, I have learned how to use javascript, html, css, node.js, SQL, express and React.</p>
+          <p>I am new to the coding world. I haven&apos;t had any experience building websites until I came to DeltaV. Within the past five months, I have gone from being a novice to being somewhat experienced with building and creating websites. Through DeltaV, I have learned how to use javascript, html, css, node.js, SQL, express and React.</p>
         </div>
       </main>
     );
