@@ -8,8 +8,8 @@ class GameContainer extends React.Component{
     super();
     this.state = {
       locked: {
-        'input1': true,
-        'input2': true,
+        'value1': true,
+        'value2': true,
       },
       value1: '',
       value2: '',
@@ -20,28 +20,25 @@ class GameContainer extends React.Component{
     this.props.fetch(this.props.match.params.id);
   }
 
+  componentDidUpdate(){
+    console.log(this.state);
+  }
 
   changeHandler = e =>{
+    console.log('Hi keith');
     let val = e.target.value;
-    let className = e.target.className;
-    if(val.length !== 2 || (val.charCodeAt(0) > 101 || val.charCodeAt(0) < 97) || (val[1] > 5 || val[1] < 1)){
-      this.setState = ({
-        locked: {
-          className: true,
-        },
-      });
-    } else{
-      this.locked[className] = false;
-      if(className === 'input1'){
-        this.setState = ({
-          value1: val,
-        });
-      } else{
-        this.setState = ({
-          value2: val,
-        });
-      }
-    }
+    let inputName = e.target.name;
+    console.log({val, inputName});
+    var lockThis = val.length !== 2 || (val.charCodeAt(0) > 101 || val.charCodeAt(0) < 97) || (val[1] > 5 || val[1] < 1);
+   
+    this.setState( state =>({
+      locked: {
+        ...state.locked,
+        [inputName]: lockThis,
+      },
+      [inputName]: val,
+    }));
+    
   }
   submitHandler = e =>{
     e.preventDefault();
@@ -54,7 +51,7 @@ class GameContainer extends React.Component{
     if(!phase){
       return <h1>Loading...</h1>;
     }
-    if(phase[0] !== '0' || phase[0] !== '1' || phase[0] !== '2'){
+    /*if(phase[0] !== '0' || phase[0] !== '1' || phase[0] !== '2'){
       this.setState = ({
         locked: {
           input2: false,
@@ -63,7 +60,7 @@ class GameContainer extends React.Component{
       this.setState = ({
         confirmationText: 'Firing at ',
       });
-    }
+    }*/
     return (
       <React.Fragment>
         <div id={_id}>{/*for testing purposes*/}
@@ -71,15 +68,15 @@ class GameContainer extends React.Component{
           <Board shipStatuses={shipStatuses} userShots={userShots} opponentShots={opponentShots} />
           <aside>
             <form onSubmit={this.submitHandler}>
-              {phase[0] === '0' && phase[0] === '1' && phase[0] === '2' ?
+              {phase[0] === '0' || phase[0] === '1' || phase[0] === '2' ?
                 <div>
-                  <input className='input1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/> 
-                  <input className='input2' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
+                  <input name='value1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/> 
+                  <input name='value2' type='text'  onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>
               
                 :
                 <div>
-                  <input className='input1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
+                  <input name='value1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>
               }
               <p>{this.state.confirmationText === 'Placing ship at ' ?
@@ -87,10 +84,10 @@ class GameContainer extends React.Component{
                 :
                 `${this.state.confirmationText}${this.state.value1}.`//e.g. 'Firing at a1.'  
               }</p>
-              {!this.state.locked['input1'] && !this.state.locked['input2'] && yourTurn ?
-                <button type='submit'></button>
+              {(!this.state.locked['value1'] && !this.state.locked['value2'] && yourTurn) ?
+                <button type='submit'>Confirm</button>
                 :
-                <button type='submit' disabled></button>
+                <button type='submit' disabled>Confirm</button>
               }
             </form>
           </aside>
