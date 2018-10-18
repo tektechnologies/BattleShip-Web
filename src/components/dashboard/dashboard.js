@@ -23,7 +23,7 @@ class Dashboard extends React.Component{
         <img src="../../WhiteBoardPictures/Capture.PNG" alt="logo-bsd" height="300" width="300"></img>
         <div>
           <ul>
-            {gameList.map(games => (<li key={games._id}>{games.game}</li>))}
+            {gameList.map(games => (<li key={games.id}>Game with: {games.players[0]}  Current game phase: {games.phase} <button value={games.id} onClick={this.redirect}>Join Game</button></li>))}
           </ul>
         </div>
       </React.Fragment>
