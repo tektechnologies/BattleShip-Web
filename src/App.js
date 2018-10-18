@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Auth from './components/auth';
+import * as authActions from './actions/auth-actions';
 import './styles/reset.css';
 import './styles/app.css';
 import { Provider } from 'react-redux';
@@ -11,7 +12,7 @@ import CreateGame from './components/create-game/create-game';
 import DashBoard from './components/dashboard/dashboard';
 import GameContainer from './components/gameContainer';
 const store = storeFactory();
-
+store.dispatch(authActions.tokenFromCookie());
 
 
 class App extends Component {
