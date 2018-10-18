@@ -13,7 +13,10 @@ header {
 }
 
 .nav p {
-  float: right;
+  position: fixed;
+  right: 10%;
+  margin: 1%;
+  top: 6%;
 }
 
 a {
@@ -30,6 +33,29 @@ h1 {
   padding-left: .5%;
 }
 
-.nav button {
-  float: right;
+.signin {
+  position: fixed;
+  right: 0vw;
+  margin: 1%;
+  top: 5.5%;
+}
+
+.signout {
+  position: fixed;
+  right: 0%;
+  margin: 1%;
+  top: 5.5%;
+}
+
+.signup {
+  position: fixed;
+  right: 11vw;
+  margin: 1%;
+  top: 5.5%;
+}
+
+@media (min-width: 768px) {
+  .signup {
+    right: 6vw;
+  }
 }
