@@ -37,21 +37,21 @@ h1 {
   position: fixed;
   right: 0vw;
   margin: 1%;
-  top: 5.5%;
+  top: 3.5%;
 }
 
 .signout {
   position: fixed;
   right: 0%;
   margin: 1%;
-  top: 5.5%;
+  top: 3.5%;
 }
 
 .signup {
   position: fixed;
   right: 11vw;
   margin: 1%;
-  top: 5.5%;
+  top: 3.5%;
 }
 
 @media (min-width: 768px) {
