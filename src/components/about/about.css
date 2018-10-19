@@ -2,20 +2,64 @@ html {
   height: 100%;
 }
 
-.about { 
-  width: 90%;
-  padding: 2%;
-}
-
 .about h2 {
   font-size: 150%;
 }
 
 .about h3 {
-  font-size: 125%;
+  font-size: 2em;
 }
 
 .about p {
   font-size: 115%;
   padding: 1%;
 }
+
+.craig-img {
+  height: 200px;
+  width: 200px;
+}
+
+.nathan-img {
+  height: 200px;
+  width: 200px;
+}
+
+.about {
+  background-color: #EBEEEA;
+  width: 90%;
+  border: solid #6E8A91;
+  border-radius: 15px;
+  margin: 5%;
+}
+
+.ethan {
+  padding: 2%;
+  padding-bottom: 10%;
+  border-bottom: 1px solid #6E8A91;
+}
+
+.dylan {
+  padding: 2%;
+  padding-bottom: 10%;
+  border-bottom: 1px solid #6E8A91;
+}
+
+.craig {
+  padding: 2%;
+  padding-bottom: 10%;
+  border-bottom: 1px solid #6E8A91;
+}
+
+.nathan {
+  padding: 2%;
+  padding-bottom: 10%;
+  border-bottom: 1px solid #6E8A91;
+}
+
+.john {
+  padding: 2%;
+  padding-bottom: 10%;
+  border-bottom: 1px solid #6E8A91;
+}
+
