@@ -8,7 +8,7 @@ export const userSet = (user) => ({
 });
 
 export const userFetch = () => (dispatch, getState) => {
-  superagent.get(`${API_URL}/api/games`)
+  superagent.get(`${API_URL}/user`)
     .set('Authorization', getState().auth ? `Bearer ${getState().auth}` : null)
     .then(res => {
       dispatch(userSet(res.body));
