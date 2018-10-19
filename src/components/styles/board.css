@@ -44,11 +44,11 @@
 }
 
 
-input[type='checkbox']:checked ~ .userViewofOpponentBoard{
+input[type='checkbox']:checked ~.board .userViewofOpponentBoard{
   opacity: 1;
 }
 
-input[type='checkbox']:checked ~ .userPlacementBoard{
+input[type='checkbox']:checked ~.board .userPlacementBoard{
   opacity: 0;
 }
 
@@ -64,5 +64,19 @@ input[type='checkbox']{
 span{
   padding: 1%;
   border: 2px inset black;
-  background: #EBEEEA;
+  background: #EBEEEA; 
+}
+
+@media (min-width: 768px) {
+  .userViewofOpponentBoard, .userPlacementBoard{
+    display: grid;
+    grid-template-columns: repeat(5, 10vw);
+    grid-template-rows: repeat(5, 10vw);
+    margin: 1%;
+    position: absolute;
+    top: calc(30% - 7vh);
+    left: 5vw;
+    opacity: 1;
+    color: #EBEEEA;
+  }
 }
