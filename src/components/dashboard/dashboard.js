@@ -33,10 +33,10 @@ class Dashboard extends React.Component{
       <React.Fragment>
       
          
-        <h2>Join a Game!</h2>
-        <div>
-        
-          <ul>
+       
+        <section>
+          <h2>Join a Game!</h2>
+          <ul className="background">
             {gameList.map(games =>
               (<li key={games.id}>Game with: {games.players[0]}|
               Current game phase: {games.phase}  
@@ -44,7 +44,7 @@ class Dashboard extends React.Component{
               </li>
               ))}
           </ul>
-        </div>
+        </section>
       </React.Fragment>
     );
   }
