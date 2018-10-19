@@ -31,7 +31,7 @@ class GameContainer extends React.Component{
     let valid = this.validateCoord(state.value1);
     if(this.props.phase[0] <= '2'){
       valid = valid && this.validateCoord(state.value2);
-      //check diagonals
+      //TODO: check diagonals
     } 
     return valid;
   }
