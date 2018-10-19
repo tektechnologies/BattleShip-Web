@@ -1,4 +1,6 @@
 # BattleShip-UI
+![DeltaV 401 project whiteboard](/styles/images/boardgamecover.PNG)
+
 Front end portion of the BattleShip Delta App. 
 
 *We will be attempting to showcase our skills with building a React App
