@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import * as actions from '../actions/auth-actions';
+import * as actions from '../../actions/auth-actions';
 import AuthForm from './auth-form';
 import { withRouter } from 'react-router-dom';
+import './auth.css';
 
 class Auth extends React.Component{
   render(){
@@ -18,10 +19,14 @@ class Auth extends React.Component{
     }
     
     return(
-      <AuthForm onComplete={handleComplete} 
-        submitText={type === 'signup' ? 'Sign Up' : 'Sign In'}
-        redirect = {()=> this.props.history.push('/')}
-      />
+      <React.Fragment>
+        <h2 className='title'>{type === 'signup' ? 'Sign Up' : 'Sign In'}</h2>
+        <AuthForm onComplete={handleComplete} 
+          submitText={type === 'signup' ? 'Sign Up' : 'Sign In'}
+          redirect = {()=> this.props.history.push('/')}
+        />
+      </React.Fragment>
+     
     );
   }
 }

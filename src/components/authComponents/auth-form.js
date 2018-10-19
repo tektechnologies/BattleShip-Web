@@ -56,7 +56,7 @@ export default class AuthForm extends React.Component{
           placeholder='password'
           value={password}
           onChange={this.handleChange}/>
-        <button type='submit'>{this.props.submitText}</button> 
+        <button className='authSubmit' type='submit'>{this.props.submitText}</button> 
         
       </form>
     );

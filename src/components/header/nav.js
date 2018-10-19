@@ -3,8 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/auth-actions';
 import Modal from './modal';
-import Auth from '../auth';
 import mainLogo from '../../styles/images/BattleShipDelta3.png';
+import Auth from '../authComponents/auth';
 import './nav.css';
 
 class Nav extends Component {
@@ -58,7 +58,7 @@ class Nav extends Component {
                 <button className='signin' value='signin' onClick={this.showModal}>Sign In Here</button>
                 <button className='signup' value='signup' onClick={this.showModal}>Sign Up Here</button>
               </div>
-              <Modal title='Authentification' show={this.state.showAuth} handleClose={this.hideModal}>
+              <Modal show={this.state.showAuth} handleClose={this.hideModal}>
                 <Auth type={this.state.type} />
               </Modal>
             </nav>
