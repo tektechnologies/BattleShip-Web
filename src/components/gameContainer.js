@@ -14,6 +14,9 @@ class GameContainer extends React.Component{
   }
   componentDidMount(){
     this.props.fetch(this.props.match.params.id);
+    this.fetchInterval = setInterval(()=>{
+      this.props.fetch(this.props.match.params.id);}
+    ,10000);
   }
 
   componentDidUpdate(){
