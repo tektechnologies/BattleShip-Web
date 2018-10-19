@@ -4,7 +4,7 @@ div.userViewofOpponentBoard, div.userPlacementBoard{
   grid-template-rows: repeat(5, 10vw);
   margin: 1%;
   position: absolute;
-  top: calc(30% - 7vh);
+  top: calc(30% - 6vh);
   left: 25vw;
   opacity: 1;
   color: #EBEEEA;

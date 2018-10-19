@@ -5,8 +5,7 @@
   text-align: center;
   font-size: 1em;
   position: relative;
-  top: 4vh;
-  bottom: 3vh;
+  bottom: 8vh;
  }
 
  .board {
@@ -35,7 +34,7 @@
   font-size: 2vw;
   background: #EBEEEA;
   padding: 1vh;
-  border: #4390AF outset 5px;
+  border: #4390AF inset 2px;
 }
 
  @media (min-width: 768px) {
@@ -53,6 +52,10 @@
   .input1 {
     margin-top: 2vh;
     margin-bottom: 2vh;
+  }
+
+  .input3 {
+    margin-top: 9vh;
   }
 
   .input-text {

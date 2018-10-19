@@ -81,7 +81,7 @@ class GameContainer extends React.Component{
                 </div>
                 :
                 <div>
-                  <input name='value1' type='text' value={this.state.value1} onChange={this.changeHandler} required minLength='2' maxLength='2'/>
+                  <input className="input3" name='value1' type='text' value={this.state.value1} onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>
               }
               <p className="input-text">{phase[0] <= '2' ?
