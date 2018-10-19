@@ -1,0 +1,53 @@
+.game-form {
+  background-color: rgb(209, 209, 209);
+  border: solid rgb(90, 78, 78);
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1em;
+  position: relative;
+  top: 4vh;
+  bottom: 3vh;
+ }
+
+ .board {
+   /* position: relative; */
+   height: 70vh;
+ }
+
+ .input1 {
+   margin-top: 1vh;
+ }
+
+ .input-text {
+  margin-top: 1vh;
+}
+
+.game-button {
+  margin-top: 1vh;
+}
+
+ @media (min-width: 768px) {
+  .game-form {
+    float: right;
+    width: 35vw;
+    left: 5vw;
+    height: 35vh;
+    top: -400px;
+    right: 5vw;
+    margin-right: 10vw;
+    margin-top: 5vh;
+  }
+  
+  .input1 {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
+
+  .input-text {
+    margin-top: 2vh;
+  }
+
+  .game-button {
+    margin-top: 2vh;
+  }
+ }
