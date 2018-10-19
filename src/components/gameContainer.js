@@ -53,6 +53,12 @@ class GameContainer extends React.Component{
   submitHandler = e =>{
     e.preventDefault();
     this.props.move(this.props._id, this.state.value1, this.state.value2);
+    var state = {
+      locked: true,
+      value1: '',
+      value2: '',
+    };
+    this.setState(state);
   }
 
   render(){
@@ -69,12 +75,12 @@ class GameContainer extends React.Component{
             <form onSubmit={this.submitHandler}>
               {phase[0] <= '2' ?
                 <div>
-                  <input name='value1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/> 
-                  <input name='value2' type='text'  onChange={this.changeHandler} required minLength='2' maxLength='2'/>
+                  <input name='value1' type='text' value={this.state.value1} onChange={this.changeHandler} required minLength='2' maxLength='2'/> 
+                  <input name='value2' type='text' value={this.state.value2} onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>            
                 :
                 <div>
-                  <input name='value1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
+                  <input name='value1' type='text' value={this.state.value1} onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>
               }
               <p>{phase[0] <= '2' ?
