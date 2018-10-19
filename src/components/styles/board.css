@@ -1,4 +1,4 @@
-.userViewofOpponentBoard, .userPlacementBoard{
+div.userViewofOpponentBoard, div.userPlacementBoard{
   display: grid;
   grid-template-columns: repeat(5, 10vw);
   grid-template-rows: repeat(5, 10vw);
@@ -67,8 +67,31 @@ span{
   background: #EBEEEA; 
 }
 
+h4{
+  width: 40%;
+  text-align: center;
+  opacity: 1;
+  position: absolute;
+  top: calc(30% - 12vh);
+  left: 30vw;
+  font-weight: bold;
+  font-size: 3vh;
+  background: linear-gradient(#4390AF, #3B616A);
+  border: 3px black inset;
+  padding: 1vh 0;
+  color: rgba(250, 255, 249, 0.753);
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 1);
+}
+
+
+
 @media (min-width: 768px) {
-  .userViewofOpponentBoard, .userPlacementBoard{
+  h4{
+    position: absolute;
+    top: calc(30% - 12vh);
+    left: 11vw;
+  }
+  div.userViewofOpponentBoard, div.userPlacementBoard{
     display: grid;
     grid-template-columns: repeat(5, 10vw);
     grid-template-rows: repeat(5, 10vw);

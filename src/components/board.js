@@ -48,9 +48,11 @@ export default class Board extends React.Component{
         <span>Toggle Board View</span>
 
         <div className="board">
+          <h4 className='userViewofOpponentBoard'>Your Hits and Misses</h4>
           <div className='userViewofOpponentBoard'>
             {this.generateCellDivs(userShots)}
           </div>
+          <h4 className='userPlacementBoard'>Your Ships</h4>
           <div className='userPlacementBoard'>
             {this.generateCellDivs(opponentShots, taken)}
           </div>
