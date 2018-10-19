@@ -4,7 +4,7 @@ let rows = ['a', 'b', 'c', 'd', 'e'];
 
 export default class Board extends React.Component{
 
-  generateClassNames = (shots, taken) =>{ //takes in only the user or opponentShots
+  generateCellDivs = (shots, taken) =>{ //takes in only the user or opponentShots
     let array = []; //array of classNames to give each cell
     rows.forEach(row =>{
       let rowClass = ' row-'; //base row class for css grid
@@ -26,7 +26,7 @@ export default class Board extends React.Component{
         }
         className += rowClass;
         className += colClass;// className looks like this: 'cell (taken, hit, missed) row-(a-e) col-(1-5)'
-        array.push(className);
+        array.push(<div key={coord} className={className}>{coord}</div>);
       }
     });
     return array;
@@ -48,22 +48,10 @@ export default class Board extends React.Component{
         <span>Toggle Board View</span>
 
         <div className='userViewofOpponentBoard'>
-          {this.generateClassNames(userShots).map((name,i) =>{
-            let mod = Math.floor(i / 5);
-            let letter = String.fromCharCode(97 + mod);
-            let number = ((i + 1 + mod) % 6).toString();
-            return <div key={i} className={name}>{letter}{number}</div>;
-          }
-          )}
+          {this.generateCellDivs(userShots)}
         </div>
         <div className='userPlacementBoard'>
-          {this.generateClassNames(opponentShots, taken).map((name, i) =>{
-            let mod = Math.floor(i / 5);
-            let letter = String.fromCharCode(97 + mod);
-            let number = ((i + 1 + mod) % 6).toString();
-            return <div key={i} className={name}>{letter}{number}</div>;
-          }
-          )}
+          {this.generateCellDivs(opponentShots, taken)}
         </div>
       </React.Fragment>
     );
