@@ -17,7 +17,6 @@ header {
 .link {
   margin-top:25px;
   display: inline-block;
-  /* float: left; */
   width: 50%;
   clear: left;
 }
@@ -43,28 +42,27 @@ a:hover {
   font-size: 175%;
 }
 
-h1 {
-  margin: 20px;
-  display: inline-block;
-  font-size: 175%;
-}
-
 .authentication {
   float: right;
-  line-height: 4.9em;
+  line-height: 4px;
 }
 
 .signout {
   float: right;
+  line-height: 4px;
+}
+
+.effect {
   margin: 20px;
-  /* line-height: 4px; */
 }
 
 .signin{
 margin-right: 20px;
+margin-top: 20px;
 }
 .signup{
   margin-right: 20px;
+  margin-top: 20px;
 }
 
 
