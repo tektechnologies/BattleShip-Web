@@ -15,7 +15,7 @@ export default class Home extends Component {
             Step 2: Place your ships onto the board by typing in the coordinates that you would like. They must be the starting coordinate and the ending coordinate.
           </p>
           <p>
-            Step 3: To fire at your opponent, type in the coordinate that you would like to fire at. If it misses, a (insert color here) pin will appear on that spot. If it hits, a (insert color here) pin will appear on that spot.
+            Step 3: To fire at your opponent, type in the coordinate that you would like to fire at. If it misses, the spot you shot at will appear blue. If it hits, that spot will turn pink.
           </p>
           <p>
             Step 4: Play until one of you sinks all the other player&apos;s ships.
