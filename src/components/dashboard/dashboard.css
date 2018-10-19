@@ -4,15 +4,19 @@ p{
 }
 
 
-
+ h2{
+    font-size: 2.0em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
  
 
-ul{
+ul {
     list-style: none;
     padding: 0;
     width: 600px;
     margin: 0 auto;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
 }
 
 .dashButton{
@@ -20,6 +24,7 @@ ul{
     padding: 5px 10px;
     box-sizing: border-box;
     margin: 0 auto;
+    margin-top: -5px;
     
 }
 
@@ -30,6 +35,21 @@ li{
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+li:last-child {
+    border: none;
+  }
+
+.background {
+background-color: #FFFFFF;
+border: solid rgb(90, 78, 78);
+border-radius: 15px;
+/* position: relative; */
+top: 50px;
+/* text-align: center; */
+
+}
+
 
 
 @media (min-width: 768px) {
