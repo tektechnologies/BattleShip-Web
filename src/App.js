@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import Auth from './components/auth';
 import * as authActions from './actions/auth-actions';
 import './styles/reset.css';
 import './styles/app.css';
@@ -38,7 +37,6 @@ class App extends Component {
                 component={About} />
 
               <div>
-                <Route exact path='/auth/:type' component={Auth}/>
                 <Route exact path='/game/:id' component={GameContainer} />
               </div>
             </main>
