@@ -54,6 +54,8 @@ input[type='checkbox']:checked ~.board .userPlacementBoard{
 
 input[type='checkbox'], span{
   float: right;
+  clear: right;
+  margin-right: 10px;
 }
 
 input[type='checkbox']{
@@ -62,9 +64,12 @@ input[type='checkbox']{
 }
 
 span{
-  padding: 1%;
+  padding: 1% 0;
   border: 2px inset black;
-  background: #EBEEEA; 
+  background: #EBEEEA;
+  width: 130px;
+  font-size: 14px;
+  text-align: center;
 }
 
 h4{

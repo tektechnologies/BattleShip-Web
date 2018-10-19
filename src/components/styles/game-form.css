@@ -5,7 +5,7 @@
   text-align: center;
   font-size: 1em;
   position: relative;
-  bottom: 8vh;
+  bottom: 7vh;
  }
 
  .board {
@@ -27,14 +27,19 @@
 
 .phase{
   width: 30%;
-  margin: 20px auto;
+  height: 40px;
+  margin: 5px auto;
   text-align: center;
   color: rgba(152, 184, 192, 0.753);
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 1);
-  font-size: 2vw;
+  font-size: 20px;
   background: #EBEEEA;
-  padding: 1vh;
   border: #4390AF inset 2px;
+}
+
+.error{
+  color: red;
+  margin: 10px;
 }
 
  @media (min-width: 768px) {
