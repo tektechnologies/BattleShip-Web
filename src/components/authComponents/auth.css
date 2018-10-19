@@ -1,0 +1,14 @@
+.auth{
+  width:100%;
+}
+.authSubmit{
+  float:right;
+  margin:10px;
+}
+.auth input{
+  display:block;
+  margin:5px auto;
+  width:50%;
+  border:.5px solid rgb(90, 78, 78);
+  text-align: center;
+}
