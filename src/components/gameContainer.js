@@ -64,7 +64,12 @@ class GameContainer extends React.Component{
 
   render(){
     const {_id, phase, shipStatuses, yourTurn, userShots, opponentShots} = this.props;
-    let length = Math.sqrt(Math.pow(this.state.value1[1] - this.state.value2[1], 2)) + 1;
+    let length;
+    if(this.state.value1[0] !== this.state.value2[0]){
+      length = Math.abs(this.state.value1.charCodeAt(0) - this.state.value2.charCodeAt(0)) + 1;
+    }else{
+      length = Math.sqrt(Math.pow(this.state.value1[1] - this.state.value2[1], 2)) + 1;
+    }
     if(!phase){
       return <h1>Loading...</h1>;
     }
