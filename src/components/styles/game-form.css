@@ -5,8 +5,7 @@
   text-align: center;
   font-size: 1em;
   position: relative;
-  top: 4vh;
-  bottom: 3vh;
+  bottom: 8vh;
  }
 
  .board {
@@ -26,6 +25,18 @@
   margin-top: 1vh;
 }
 
+.phase{
+  width: 30%;
+  margin: 20px auto;
+  text-align: center;
+  color: rgba(152, 184, 192, 0.753);
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 1);
+  font-size: 2vw;
+  background: #EBEEEA;
+  padding: 1vh;
+  border: #4390AF inset 2px;
+}
+
  @media (min-width: 768px) {
   .game-form {
     float: right;
@@ -41,6 +52,10 @@
   .input1 {
     margin-top: 2vh;
     margin-bottom: 2vh;
+  }
+
+  .input3 {
+    margin-top: 9vh;
   }
 
   .input-text {

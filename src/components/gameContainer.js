@@ -70,7 +70,7 @@ class GameContainer extends React.Component{
     return (
       <React.Fragment>
         <div id={_id}>{/*for testing purposes*/}
-          <h3 className='phase'>{phase}</h3>
+          <h3 className='phase'><p>{yourTurn ? 'It\'s your turn!' : 'Waiting for opponent...' }</p><p>{phase[0] <= '2' ? 'Placing ships' : ''}</p></h3>
           <Board shipStatuses={shipStatuses} userShots={userShots} opponentShots={opponentShots} />
           <aside>
             <form className="game-form" onSubmit={this.submitHandler}>
@@ -81,7 +81,7 @@ class GameContainer extends React.Component{
                 </div>
                 :
                 <div>
-                  <input name='value1' type='text' value={this.state.value1} onChange={this.changeHandler} required minLength='2' maxLength='2'/>
+                  <input className="input3" name='value1' type='text' value={this.state.value1} onChange={this.changeHandler} required minLength='2' maxLength='2'/>
                 </div>
               }
               <p className="input-text">{phase[0] <= '2' ?
