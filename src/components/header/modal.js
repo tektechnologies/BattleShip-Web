@@ -23,9 +23,6 @@ export default class Modal extends Component {
       <div className={modalName}>
         <main>
           <button className='exit' onClick={this.props.handleClose}>X</button>
-          {this.props.title &&
-            <h2>{this.props.title}</h2>}
-          
           {this.props.children}
         </main>
       </div>

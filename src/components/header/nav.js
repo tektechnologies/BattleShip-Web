@@ -58,7 +58,7 @@ class Nav extends Component {
                 <button className='signin' value='signin' onClick={this.showModal}>Sign In Here</button>
                 <button className='signup' value='signup' onClick={this.showModal}>Sign Up Here</button>
               </div>
-              <Modal title='Authentification' show={this.state.showAuth} handleClose={this.hideModal}>
+              <Modal show={this.state.showAuth} handleClose={this.hideModal}>
                 <Auth type={this.state.type} />
               </Modal>
             </nav>
