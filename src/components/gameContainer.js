@@ -12,6 +12,7 @@ class GameContainer extends React.Component{
       value2: '',
     };
   }
+
   componentDidMount(){
     this.props.fetch(this.props.match.params.id);
     this.fetchInterval = setInterval(()=>{
@@ -37,29 +38,24 @@ class GameContainer extends React.Component{
   }
 
   changeHandler = e =>{
-    console.log('Hi keith');
     let val = e.target.value;
     let inputName = e.target.name;
-    console.log({val, inputName});
-    //var lockThis = val.length !== 2 || (val.charCodeAt(0) > 101 || val.charCodeAt(0) < 97) || (val[1] > 5 || val[1] < 1);
-   
+       
     this.setState({
-      [inputName]: val,
-      
+      [inputName]: val,      
     });
 
     this.setState( state =>({
       locked: !this.validateState(state),
     }));
-    
   }
+
   submitHandler = e =>{
     e.preventDefault();
     this.props.move(this.props._id, this.state.value1, this.state.value2);
   }
 
   render(){
-    console.log(this.props);
     const {_id, phase, shipStatuses, yourTurn, userShots, opponentShots} = this.props;
     if(!phase){
       return <h1>Loading...</h1>;
@@ -75,8 +71,7 @@ class GameContainer extends React.Component{
                 <div>
                   <input name='value1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/> 
                   <input name='value2' type='text'  onChange={this.changeHandler} required minLength='2' maxLength='2'/>
-                </div>
-              
+                </div>            
                 :
                 <div>
                   <input name='value1' type='text' onChange={this.changeHandler} required minLength='2' maxLength='2'/>
