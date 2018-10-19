@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import * as actions from '../../actions/auth-actions';
 import AuthForm from './auth-form';
 import { withRouter } from 'react-router-dom';
+import './auth.css';
 
 class Auth extends React.Component{
   render(){
