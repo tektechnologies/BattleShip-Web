@@ -6,6 +6,12 @@
   position: absolute;
   top: calc(30% - 7vh);
   left: 25vw;
+  opacity: 1;
+  color: #EBEEEA;
+}
+
+.userViewofOpponentBoard{
+  opacity: 0;
 }
 
 .cell{
@@ -15,9 +21,43 @@
   background:  radial-gradient(ellipse at center, rgba(89,111,95,1) 0%, rgba(89,111,95,1) 59%, rgba(0,0,0,1) 100%);
 }
 
+.hit{
+  background: radial-gradient(ellipse at center, rgba(255,201,194,1) 0%, rgba(255,201,194,1) 59%, rgba(0,0,0,1) 100%);
+}
+
+.missed{
+  background: radial-gradient(ellipse at center, rgba(110,138,145,1) 0%, rgba(110,138,145,1) 59%, rgba(0,0,0,1) 100%);
+}
+
 .taken{
-  background: url('/images/shipsvg.png');
+  background-image: url('/images/shipsvg.png'), radial-gradient(ellipse at center, rgba(89,111,95,1) 0%, rgba(89,111,95,1) 59%, rgba(0,0,0,1) 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.hit.taken{
+  background: url('/images/shipsvg.png'), radial-gradient(ellipse at center, rgba(255,201,194,1) 0%, rgba(255,201,194,1) 59%, rgba(0,0,0,1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+input[type='checkbox']:checked ~ .userViewofOpponentBoard{
+  opacity: 1;
+}
+
+input[type='checkbox']:checked ~ .userPlacementBoard{
+  opacity: 0;
+}
+
+input[type='checkbox'], span{
+  float: right;
+}
+
+span{
+  padding: 1%;
+  border: 2px inset black;
+  background: #EBEEEA;
 }
