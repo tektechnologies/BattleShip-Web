@@ -19,10 +19,14 @@ class Auth extends React.Component{
     }
     
     return(
-      <AuthForm onComplete={handleComplete} 
-        submitText={type === 'signup' ? 'Sign Up' : 'Sign In'}
-        redirect = {()=> this.props.history.push('/')}
-      />
+      <React.Fragment>
+        <h2 className='title'>{type === 'signup' ? 'Sign Up' : 'Sign In'}</h2>
+        <AuthForm onComplete={handleComplete} 
+          submitText={type === 'signup' ? 'Sign Up' : 'Sign In'}
+          redirect = {()=> this.props.history.push('/')}
+        />
+      </React.Fragment>
+     
     );
   }
 }
