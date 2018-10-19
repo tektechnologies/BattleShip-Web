@@ -3,6 +3,7 @@ header {
 }
 
 .nav {
+  min-height:60px;
   background-color: rgb(90, 78, 78);
 }
 
@@ -10,9 +11,13 @@ header {
   color: rgb(209, 209, 209);
 }
 
+
+.link a { text-decoration: none; margin-right: 35px; }
+
 .link {
+  margin-top:25px;
   display: inline-block;
-  float: left;
+  /* float: left; */
   width: 50%;
   clear: left;
 }
@@ -39,6 +44,7 @@ a:hover {
 }
 
 h1 {
+  margin: 20px;
   display: inline-block;
   font-size: 175%;
 }
@@ -50,8 +56,17 @@ h1 {
 
 .signout {
   float: right;
-  line-height: 4px;
+  margin: 20px;
+  /* line-height: 4px; */
 }
+
+.signin{
+margin-right: 20px;
+}
+.signup{
+  margin-right: 20px;
+}
+
 
 .signin:hover {
   background-color: rgb(145, 142, 142);
@@ -66,4 +81,11 @@ h1 {
 .effect:hover {
   background-color: rgb(145, 142, 142);
   transition: 250ms;
+}
+
+
+img{
+  margin-left: 10px;
+  float: left;
+  margin-right: 30px;
 }

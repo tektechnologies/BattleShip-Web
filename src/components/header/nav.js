@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/auth-actions';
 import Modal from './modal';
 import Auth from '../auth';
+import mainLogo from '../../styles/images/BattleShipDelta3.png';
 import './nav.css';
 
 class Nav extends Component {
@@ -37,21 +38,22 @@ class Nav extends Component {
       <header className="nav">
         {this.props.auth ? 
           <div>
-            <nav className='loggedin'>
-              <Link to='/'><h1 className='auth'>BattleShip Delta</h1></Link>
+            <nav className='loggedin'> 
+              <Link to='/'><img src={mainLogo} alt="logo-bsd" height="55" width="85" /></Link>
+
               <div className='link'>
                 <Link to='/dashboard'>Dashboard</Link> { }
                 <Link to='/creategame'>Create Game</Link>
               </div>
               <div  className='signout'>
-                <button className='effect' onClick={this.signoutClick}>sign out</button>
+                <button className='effect' onClick={this.signoutClick}>Sign Out</button>
               </div>
             </nav>
           </div>
           :
           <div>
             <nav>
-              <Link to='/'><h1>BattleShip Delta</h1></Link>
+              <Link to='/'><img src={mainLogo} alt="logo-bsd" height="55" width="85" /></Link>
               <div className='authentication'>
                 <button className='signin' value='signin' onClick={this.showModal}>Sign In Here</button>
                 <button className='signup' value='signup' onClick={this.showModal}>Sign Up Here</button>
