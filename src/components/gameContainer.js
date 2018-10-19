@@ -19,9 +19,10 @@ class GameContainer extends React.Component{
     ,10000);
   }
 
-  componentDidUpdate(){
-    console.log(this.state);
+  componentWillUnmount(){
+    clearInterval(this.fetchInterval);
   }
+
   validateCoord(val){
     return !(val.length !== 2 || (val.charCodeAt(0) > 101 || val.charCodeAt(0) < 97) || (val[1] > 5 || val[1] < 1));
   }
