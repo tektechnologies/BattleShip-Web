@@ -1,0 +1,60 @@
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+ h2{
+    font-size: 2.0em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+ 
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 600px;
+    margin: 0 auto;
+    /* background-color: gainsboro; */
+}
+
+.dashButton{
+    float: right;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: -5px;
+    
+}
+
+
+li{
+    border-bottom: 1px solid #857a7a; 
+    padding:20px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li:last-child {
+    border: none;
+  }
+
+.background {
+background-color: #FFFFFF;
+border: solid rgb(90, 78, 78);
+border-radius: 15px;
+/* position: relative; */
+top: 50px;
+/* text-align: center; */
+
+}
+
+
+
+@media (min-width: 768px) {
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
