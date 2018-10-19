@@ -56,6 +56,11 @@ input[type='checkbox'], span{
   float: right;
 }
 
+input[type='checkbox']{
+  height: 3vw;
+  width: 3vw;
+}
+
 span{
   padding: 1%;
   border: 2px inset black;
