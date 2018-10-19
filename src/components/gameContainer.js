@@ -64,6 +64,12 @@ class GameContainer extends React.Component{
 
   render(){
     const {_id, phase, shipStatuses, yourTurn, userShots, opponentShots} = this.props;
+    let length;
+    if(this.state.value1[0] !== this.state.value2[0]){
+      length = Math.abs(this.state.value1.charCodeAt(0) - this.state.value2.charCodeAt(0)) + 1;
+    }else{
+      length = Math.sqrt(Math.pow(this.state.value1[1] - this.state.value2[1], 2)) + 1;
+    }
     if(!phase){
       return <h1>Loading...</h1>;
     }
@@ -85,10 +91,15 @@ class GameContainer extends React.Component{
                 </div>
               }
               <p className="input-text">{phase[0] <= '2' ?
-                `Placing ship from ${this.state.value1} to ${this.state.value2}.`
+                `Placing ship from ${this.state.value1} to ${this.state.value2}. Length: ${isNaN(length) ? '' : length}`
                 :
                 `Firing at ${this.state.value1}.` 
               }</p>
+              {length >= 5 || length <= 1 ? 
+                <p className= 'error'> Invalid Shiplength, please choose ship length of 2, 3, or 4. (Only one of each type of ship may be placed)</p>
+                :
+                ''  
+              }
               {(!this.state.locked && yourTurn) ?
                 <button className="game-button" type='submit'>Confirm</button>
                 :

@@ -43,9 +43,9 @@ export default class Board extends React.Component{
     let opponentShots = this.props.opponentShots;
     return(
       <div className="board-container">
-
-        <input type='checkbox' />
         <span>Toggle Board View</span>
+        <input type='checkbox' />
+        
 
         <div className="board">
           <h4 className='userViewofOpponentBoard'>Your Hits and Misses</h4>
