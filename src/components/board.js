@@ -42,18 +42,20 @@ export default class Board extends React.Component{
     let userShots = this.props.userShots;
     let opponentShots = this.props.opponentShots;
     return(
-      <React.Fragment>
+      <div className="board-container">
 
         <input type='checkbox' />
         <span>Toggle Board View</span>
 
-        <div className='userViewofOpponentBoard'>
-          {this.generateCellDivs(userShots)}
+        <div className="board">
+          <div className='userViewofOpponentBoard'>
+            {this.generateCellDivs(userShots)}
+          </div>
+          <div className='userPlacementBoard'>
+            {this.generateCellDivs(opponentShots, taken)}
+          </div>
         </div>
-        <div className='userPlacementBoard'>
-          {this.generateCellDivs(opponentShots, taken)}
-        </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
