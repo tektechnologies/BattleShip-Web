@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './about.css';
-import Ethan from '../../styles/images/Ethan.jpg'
-import Dylan from '../../styles/images/Dylan.jpg'
-import John from '../../styles/images/John.jpg'
-import Craig from '../../styles/images/craig.jpg'
-import Nathan from '../../styles/images/nathan.jpg'
+import Ethan from '../../styles/images/Ethan.jpg';
+import Dylan from '../../styles/images/Dylan.jpg';
+import John from '../../styles/images/John.jpg';
+import Craig from '../../styles/images/craig.jpg';
+import Nathan from '../../styles/images/nathan.jpg';
 
 export default class About extends Component {
 
