@@ -1,5 +1,5 @@
 # BattleShip-UI
-![DeltaV 401 project whiteboard](/styles/images/boardgamecover.PNG)
+![DeltaV 401 project whiteboard](/WhiteBoardPictures/boardgamecover.PNG)
 
 Front end portion of the BattleShip Delta App. 
 
